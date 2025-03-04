@@ -1,0 +1,163 @@
+/* General Page Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 60px; /* Adjust for fixed navbar */
+    color:#f0f0f0
+    transition: background 0.5s ease-in-out;
+}
+
+/* Sections */
+section {
+    height: 100vh;
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Navbar Styling */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 15px 0;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Navbar Items */
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+/* Hover Effect - Glowing Math Theme */
+nav ul li a:hover {
+    color: #FFD700; /* Golden glow */
+    transform: scale(1.1);
+}
+
+/* Hover Effect - Adds a glowing underline */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #FFD700;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Scroll Effect: Changes Navbar Background */
+.scrolled {
+    background: black;
+    transform: translateY(-2px);
+}
+
+/* Section Colors with a Math-Inspired Theme */
+#home {
+    background: linear-gradient(to right, #2E3B4E, #4F6D7A); /* Deep blue - Inspired by logic & infinity */
+    color: white;
+}
+
+#about {
+    background: linear-gradient(to right, #1A2980, #26D0CE); /* Blue-green tones - Symbolizing knowledge */
+    color: white;
+}
+
+#services {
+    background: linear-gradient(to right, #2C3E50, #3498DB); /* Darker blue for a professional math vibe */
+    color: white;
+}
+
+#contact {
+    background: linear-gradient(to right, #8E44AD, #C0392B); /* Purple & red - Represents creativity and problem-solving */
+    color: white;
+}
+
+/* Headings Styling */
+h1 {
+    font-size: 50px; /* Large and bold */
+    color: #FFD700; /* Highlighted gold */
+}
+
+h2 {
+    font-size: 40px; /* Slightly smaller */
+    color: #00FFFF; /* Cyan for attention */
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px;
+    max-width: 800px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #f8f8f8;
+}
+
+/* Removed Bullet Points */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+/* Smooth Fade-In Effect for Sections */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animating Navbar Hover Items */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+}
+
+nav ul li a:hover {
+    animation: glow 0.8s ease-in-out infinite alternate;
+}
